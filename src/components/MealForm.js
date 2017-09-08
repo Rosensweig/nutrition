@@ -43,6 +43,7 @@ class MealForm extends Component {
 		}
 		console.log("Adding new meal: ", meal);
 		this.props.addMeal(meal);
+		event.target.reset();
 	}
 
   render() {
