@@ -21,19 +21,27 @@ class MealForm extends Component {
 
 	addMeal(event) {
 		event.preventDefault();
+		var mealType = this.mealType.value;
+		if (mealType === "Select meal type*") {
+			alert("Please select a meal type.");
+			return false;
+		} else if (mealType === "Other") {
+			mealType = this.otherType.value;
+		}
 
 		const meal = {
-			mealType: this.mealType.value,
-			veg: this.veg.value,
-			protein: this.protein.value,
-			fat: this.fat.value,
-			carb: this.carb.value,
-			drink: this.drink.value,
+			mealType: mealType,
+			veg: parseInt(this.veg.value, 10),
+			protein: parseInt(this.protein.value, 10),
+			fat: parseInt(this.fat.value, 10),
+			carb: parseInt(this.carb.value, 10),
+			drink: parseInt(this.drink.value, 10),
 			image: this.image.value
 		};
 		if (meal.mealType === "Other") {
 			meal.mealType = this.otherType;
 		}
+		console.log("Adding new meal: ", meal);
 		this.props.addMeal(meal);
 	}
 
