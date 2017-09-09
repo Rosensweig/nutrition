@@ -19,18 +19,14 @@ class App extends Component {
 			current: today
 		};
 
-		console.log("In App constructor, and today's meals are: ", this.state.days[0].meals);
 		this.addMeal = this.addMeal.bind(this);
 	}
 
 	addMeal(meal) {
-		console.log("Adding new meal.");
 		var today = new Date().toDateString();
 		var meals = [ ...this.state.days[0].meals, meal];
-		console.log("New meals list for today: ", meals);
 		var days = [...this.state.days];
 		days[0] = {date: today, meals};
-		console.log("Days list: ", days);
 		this.setState({days});
 	}
 
@@ -43,7 +39,6 @@ class App extends Component {
 	}
 
   render() {
-  	console.log("Inside App render and meals are: ", this.state.days[0].meals);
     return (
       <div className="App">
       	<h1>Meal Tracker</h1>

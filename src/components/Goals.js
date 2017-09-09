@@ -7,23 +7,17 @@ class Goals extends Component {
 		super(props);
 
 		this.checkGoals = this.checkGoals.bind(this);
-		console.log("Inside Goals constructor and props is: ", this.props);
 
 		this.state = this.checkGoals(this.props);
 	}
 
 	componentWillReceiveProps(nextProps) {
-		console.log("In componentWillReceiveProps, setting new state");
-		console.log("Props are: ", nextProps);
 		if (nextProps !== this.props) {
 			this.setState(this.checkGoals(nextProps));
 		}
 	}
 
   render() {
-  	console.log("Goals state: ", this.state);
-  	console.log("Goals props: ", this.props);
-
     return (
       <div className="Goals">
       	<h2>Today's Goals:</h2>
@@ -42,7 +36,6 @@ class Goals extends Component {
 
   checkGoals(props) {
   	var meals = props.meals;
-  	console.log("Inside checkGoals and meals is: ", meals);
   	var goals = {};
   	var totals = {
   		veg: 0,

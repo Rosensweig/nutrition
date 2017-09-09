@@ -51,7 +51,7 @@ class MealForm extends Component {
     return (
       <div className="MealForm">
       	<form onSubmit={this.addMeal}>
-      		<h2>Enter meal info</h2>
+      		<h2>Enter New Meal</h2>
       		<select onChange={this.showHideInput} ref={(mealType) => {this.mealType = mealType}}>
       			<option value={null}>Select meal type*</option>
       			<option value="Breakfast">Breakfast</option>
@@ -67,7 +67,7 @@ class MealForm extends Component {
       		<label>Fats <input type="number" defaultValue="0" min="0" max="6" ref={(fat) => {this.fat = fat}} /></label>
       		<label>Carbohydrates <input type="number" defaultValue="0" min="0" max="6" ref={(carb) => {this.carb = carb}} /></label>
       		<label>Drinks <input type="number" defaultValue="0" min="0" max="6" ref={(drink) => {this.drink = drink}} /></label>
-      		<label>Custom image (optional): <input type="file" accept="image/*" ref={(image) => {this.image = image}} /></label>
+      		{/*<label>Custom image (optional): <input type="file" accept="image/*" ref={(image) => {this.image = image}} /></label>*/}
       		<button type="submit">Add Meal</button>
       	</form>
     	</div>
